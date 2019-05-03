@@ -1,5 +1,3 @@
-```cpp
-
 bool isIsomorphic(string s, string t) {
         char map_s[128] = { 0 };
         char map_t[128] = { 0 };
@@ -12,6 +10,5 @@ bool isIsomorphic(string s, string t) {
         }
         return true;    
     }
- ```
  
  
