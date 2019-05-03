@@ -5,20 +5,34 @@ class Solution(object):
     :type t: str
     :rtype: bool
     """
-    if not len(s) == len(t):
-      return False
-
-    sHash = tHash = 1
-    sCount = [0] * 26
-    tCount = [0] * 26
-    p1 = 2903
-    p2 = 29947
-    for i in range(0, len(s)):
-      sCount[ord(s[i]) - ord('a')] += 1
-      tCount[ord(t[i]) - ord('a')] += 1
-
-    for i in range(0, 26):
-      sHash = sHash * p1 + sCount[i]
-      tHash = tHash * p1 + tCount[i]
-      p1 *= p2
-    return sHash == tHash
+  #solution 1 time: O(s + t) space: O(s)
+  def isAnagram1(self, s, t):
+    if len(s) != len(t) return false
+    dic1, dic2 = {}, {}
+    for item in s:
+        dic1[item] = dic1.get(item, 0) + 1
+    
+    for item in t:
+        if item in dict1:
+          dic1[item] = dic1.get(item, 0) - 1
+          if dic1[item] < 0 return false
+        else:
+          return false
+    
+    return true
+   
+  #solution 2
+  def isAnagram2(self, s, t):
+    #create an array that uses each index as a sub for each alphabet. since 'a' would be at 0, we use the distance to determine the index of the char in the array. 
+    dic1 = [0]*26
+    for item in s:
+        dic1[ord(item)-ord('a')] += 1
+   
+    for item in t:
+        if item in dict1:
+          dic1[item] = dic1.get(item, 0) - 1
+          if dic1[item] < 0 return false
+        else:
+          return false
+    
+    return true
