@@ -1,9 +1,9 @@
 bool isIsomorphic(string s, string t) {
-        // create 2 different arrays to implement hashmap
+        // create 2 different arrays to implement hashmap of each chars implicitly.
         char map_s[128] = { 0 };
         char map_t[128] = { 0 };
         int len = s.size();
-        // for each element in t and s string, if it can be found in map, increase its value by 1. otherwise, set it as 1. Because we are increasing the values, we should compare them the first thing next iteration to see if they are the same. NOT AFTER THE INCREASE IN VALUE FOR EACH CHAR.
+        // for each element in t and s string, indirectly map them to a number (which will be used as the index for both arrays). Each index of the new array will be a numberical mapping of each letter in each string and its value will be the number of times it appeared. 
         for (int i = 0; i < len; ++i)
         {
             if (map_s[s[i]]!=map_t[t[i]]) return false;
