@@ -5,7 +5,7 @@ class Solution(object):
     :type t: str
     :rtype: bool
     """
-  #solution 1 time: O(s + t) space: O(s)
+  #solution 1 time: O(s + t) space: O(s). problem is that sorting would work as well and more prefered when there are more than 2 strings to check. 
   def isAnagram1(self, s, t):
     if len(s) != len(t) return false
     dic1, dic2 = {}, {}
@@ -21,7 +21,7 @@ class Solution(object):
     
     return true
    
-  #solution 2
+  #solution 2: similar to prior idea, but doesn't use hashmap and use an array to emulate it.
   def isAnagram2(self, s, t):
     #create an array that uses each index as a sub for each alphabet. since 'a' would be at 0, we use the distance to determine the index of the char in the array. 
     dic1 = [0]*26
