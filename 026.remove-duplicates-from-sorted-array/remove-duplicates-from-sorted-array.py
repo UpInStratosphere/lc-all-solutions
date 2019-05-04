@@ -12,3 +12,8 @@ class Solution(object):
         slow += 1
         nums[slow] = nums[i]
     return slow + 1
+    
+    """
+    typical array search/modify problems can be solved with two pointers with different combinations:
+    fast/slow + front/back 
+    
